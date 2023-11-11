@@ -2,6 +2,8 @@ import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
 import { ProjectCard } from './ProjectCard';
 import colorSharp2 from '../assets/img/color-sharp2.png';
 import projImg1 from '../assets/img/project-img1.png';
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
@@ -28,8 +30,14 @@ export const Projects = () => {
         <Container>
             <Row>
                 <Col>
-                    <h2>Projects</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Bibendum at varius vel pharetra vel turpis. Massa enim nec dui nunc mattis enim ut tellus elementum. Non blandit massa enim nec dui nunc mattis enim.</p>
+                    <TrackVisibility>
+                        {   ({ isVisible }) =>
+                            <div className={ isVisible ? "animate__animated animate__fadeInLeft" : "" }>
+                                <h2>Projects</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Bibendum at varius vel pharetra vel turpis. Massa enim nec dui nunc mattis enim ut tellus elementum. Non blandit massa enim nec dui nunc mattis enim.</p>
+                            </div>
+                        }
+                    </TrackVisibility>
                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
                         <Row>
                             <Col>
